@@ -25,6 +25,12 @@ app.get('/', (req, res) => {
     })
 });
 
+app.get('/validation', (req, res) => {
+   res.render('formVal', {
+       title: 'form validation'
+   })
+});
+
 const server = app.listen(app.get('port'), () => {
    const port = server.address().port;
    console.log(`let's create something on ${port}`);

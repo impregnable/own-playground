@@ -6,6 +6,9 @@ html(lang='en')
     head
         meta(charset='utf-8')
         title #{title}
-        link(href='stylesheet/default.less', rel='stylesheet')
+        link(rel='stylesheet/less' type='text/css' href='stylesheet/default.less')
+        script(src='js/less.min.js' type='text/javascript')
+        script(src='js/formVal.js' type='text/javascript')
     body
-        p something special is coming
+        include menu
+        block content

@@ -1,0 +1,9 @@
+//
+   Created by artem on 14.06.17.
+
+-var navbar = {'helloPage' : '/', 'form validation' : '/validation'}
+
+ul.navbar-list
+    each val, key in navbar
+        li.navbar-list_item(class=(title === key ? 'navbar_active' : ''))
+            a.navbar-list_link(href = val) #{key}

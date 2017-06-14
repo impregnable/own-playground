@@ -1,0 +1,22 @@
+//
+   Created by artem on 14.06.17.
+
+extends index
+
+block content
+    // right, obviously not the best solution, but it's the one and only that i can invent now to avoid DRY
+    // of course, it's not big deal to DRY here, why it's just a few inputs, but what if we've got a few thousand?
+    // still solution is ugly, but i'm just learning, you know
+    // anyway no one will read that stuff, but i'm just practicing in english, right :D
+    -var forFirstInputText = [{'id' : 'main-field_inputs_name', 'placeholder' : 'type your name'}, {'id' : 'main-field_inputs_age', 'placeholder' : 'type your age'}]
+    -var forSecondInputText = [{'id' : 'main-field_inputs_beloved', 'placeholder' : 'type your beloved'}]
+    .wrapper
+        each i in [0,1]
+            .main-field
+                .main-field_radio
+                    input(type='radio', name='flag', class='main-field_radio_item', id=(i == 0 ? 'main-field_radio_first-item' : 'main-field_radio_second-item'))
+                .main-field_inputs
+                    each o in (i == 0 ? forFirstInputText : forSecondInputText)
+                        input(type='text', id = o.id, placeholder = o.placeholder)
+    button#button-value validate
+    #validation-result
